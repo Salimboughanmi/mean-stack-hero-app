@@ -1,0 +1,45 @@
+<div>
+  <h1>{{ user.name }}</h1>
+  <p>{{ user.age }}</p>
+  <img *ngIf="imageChanged == true" [src]="user.Image" alt="User Image" />
+
+  <button (click)="changeimage()">change image</button>
+</div>
+
+<br />
+<input type="text" [(ngModel)]="newname" placeholder="Enter name" />
+
+<button (click)="changeName()">click 🇲🇪</button>
+
+<div>
+  <img *ngIf="desepear == true" [src]="imageCat" alt="catcat" />
+  <button (click)="desepear = !desepear">desepear cat</button>
+</div>
+
+<div>
+  <h1 *ngFor="let item of car">{{ item }}</h1>
+</div>
+<br />
+<div
+  *ngFor="let item of student"
+  [ngClass]="{ 'bgs-danger': item.age < 20, 'bgs-success': item.age >= 20 }"
+>
+  <h1>{{ item.name }}</h1>
+  <p>{{ item.age }}</p>
+</div>
+
+<p>afficher les student sont age superiure a 20</p>
+<div *ngFor="let item of student">
+  <ng-container *ngIf="item.age > 20">
+    <H1> {{ item.name }} - {{ item.age }} </H1>
+  </ng-container>
+</div>
+
+<h1>ng style derictive</h1>
+
+<div [ngStyle]="{ 'background-color': friends.bg }">
+  <h2 [ngStyle]="{ color: friends.color }">{{ friends.name }}</h2>
+  <p>{{ friends.age }}</p>
+</div>
+
+<h1>ng classe derictive</h1>
