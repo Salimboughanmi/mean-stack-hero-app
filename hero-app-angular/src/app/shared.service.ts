@@ -8,8 +8,19 @@ export class SharedService {
 
   constructor(private http :HttpClient) { }
   private url = "http://localhost:3000/"
-  heros: any = []
+ /*  heros: any = [] */
 
   createNewHero(data:any){
     return this.http.post(this.url + 'hero/ajout', data)}
-}
+   getallheros(){
+    return this.http.get(this.url + 'hero/all')}
+
+    deleteHero(id:any){
+      return this.http.delete(this.url + 'hero/supprimer/' + id)}
+
+   getHeroById(id:any){
+  return this.http.get(this.url + 'hero/getbyid/' + id) ;  }
+
+  updatehero(id:any, data:any){
+    return this.http.put(this.url + 'hero/update/' + id , data)  }
+  }

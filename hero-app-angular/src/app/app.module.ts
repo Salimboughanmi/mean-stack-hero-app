@@ -10,6 +10,8 @@ import { AjoutComponent } from './ajout/ajout.component';
 import { ListComponent } from './list/list.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { UpdateComponent } from './update/update.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     AjoutComponent,
     ListComponent,
     HeaderComponent,
+    NotfoundComponent,
+    UpdateComponent,
 
   ],
   imports: [
