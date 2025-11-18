@@ -11,7 +11,7 @@ export class SharedService {
  /*  heros: any = [] */
 
   createNewHero(data:any){
-    return this.http.post(this.url + 'hero/ajout', data)}
+    return this.http.post(this.url + 'hero/create', data)}
    getallheros(){
     return this.http.get(this.url + 'hero/all')}
 

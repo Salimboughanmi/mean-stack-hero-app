@@ -8,7 +8,10 @@
         'bg-green': item.power <= 20
       }"
     >
-      <img [src]="item.image" class="w-100" />
+      <img
+        [src]="'http://127.0.0.1:3000/getimage/' + item.image"
+        class="w-100"
+      />
       <div class="card-image">
         <h2 class="card-text">{{ item.name }}</h2>
         <p>{{ item.power }}</p>

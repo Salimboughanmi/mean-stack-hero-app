@@ -17,10 +17,10 @@
   </div>
   <div class="col-md-3">
     <input
-      type="text"
+      (change)="selectimg($event)"
+      type="file"
       class="form-control m-1"
       placeholder="image Url"
-      [(ngModel)]="myhero.image"
     />
   </div>
   <div class="col-md-3">

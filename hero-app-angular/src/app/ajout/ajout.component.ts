@@ -11,7 +11,11 @@ export class AjoutComponent implements OnInit {
   myhero ={
   name:"" ,
   power:'',
-  image:""
+ }
+ image : any;
+ selectimg(event:any){
+  this.image = event.target.files[0];
+  console.log(this.image);
  }
 
 /*  addhero(){
@@ -25,12 +29,15 @@ export class AjoutComponent implements OnInit {
 } */
 
    addhero(){
-    this._shared.createNewHero(this.myhero).subscribe(res=>{
+    let formdata = new FormData();
+    formdata.append('name' , this.myhero.name);
+    formdata.append('power' , this.myhero.power.toString());
+    formdata.append('image' , this.image);
+    this._shared.createNewHero(formdata).subscribe(res=>{
       console.log(res);
        this.myhero ={
         name:"" ,
         power:'',
-        image:""
        }
 
     },
